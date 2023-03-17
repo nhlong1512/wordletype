@@ -22,7 +22,6 @@ const App:React.FC = () => {
         <Content className="flex items-center flex-col">
           <h1 className="text-[36px] text-[#6EB9E3] font-[600] text-center mb-[40px]">WordleType</h1>
           <Board board = {board}/>
-          <KeyBoard/>
         </Content>
       </Layout>
     </div>
