@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import { Button, Layout } from "antd";
+import { Content } from "antd/es/layout/layout";
+import Board from "./components/Board/Board";
+import KeyBoard from "./components/KeyBoard/KeyBoard";
 
-function App() {
+const App:React.FC = () => {
+
+  const [board, setBoard] = useState<string[]>([
+    "", "", "", "", "",
+    "", "", "", "", "",
+    "", "", "", "", "",
+    "", "", "", "", "",
+    "", "", "", "", "",
+    "", "", "", "", "",
+  ])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Layout className="bg-[#151924] h-[100%] min-h-[100vh] pt-[2em]">
+        <Content className="flex items-center flex-col">
+          <h1 className="text-[36px] text-[#6EB9E3] font-[600] text-center mb-[40px]">WordleType</h1>
+          <Board board = {board}/>
+          <KeyBoard/>
+        </Content>
+      </Layout>
     </div>
   );
-}
+};
 
 export default App;
