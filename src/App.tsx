@@ -4,17 +4,12 @@ import { Button, Layout } from "antd";
 import { Content } from "antd/es/layout/layout";
 import Board from "./components/Board/Board";
 import KeyBoard from "./components/KeyBoard/KeyBoard";
+import { useSelector } from "react-redux";
+import { rootState } from "./model/model";
 
 const App:React.FC = () => {
 
-  const [board, setBoard] = useState<string[]>([
-    "", "", "", "", "",
-    "", "", "", "", "",
-    "", "", "", "", "",
-    "", "", "", "", "",
-    "", "", "", "", "",
-    "", "", "", "", "",
-  ])
+  const board = useSelector((state:rootState) => state.board.board);
 
   return (
     <div className="App">
