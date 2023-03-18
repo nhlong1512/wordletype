@@ -44,9 +44,6 @@ const boardSlice = createSlice({
       state.board = action.payload;
     },
     increasePos: (state) => {
-      if (state.posKey >= 29) {
-        return;
-      }
       state.posKey += 1;
     },
     decreasePos: (state) => {

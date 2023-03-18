@@ -15,6 +15,9 @@ const Key: React.FC<Props> = ({ letter }) => {
   const chooseLetter = () => {
     const newBoard = [...board];
     newBoard[posKey] = letter;
+    if (posKey > 29) {
+      return;
+    }
     dispatch(setBoard(newBoard));
     dispatch(increasePos());
   };
