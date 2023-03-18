@@ -14,9 +14,6 @@ const KeyBoard: React.FC = () => {
   const board = useSelector((state: rootState) => state.board.board);
   const posKey = useSelector((state: rootState) => state.board.posKey);
   const row = useSelector((state: rootState) => state.board.row);
-  let currentRow = Math.floor(posKey / 5);
-  console.log("currentRow", currentRow);
-  console.log("redux row", row);
   
 
   const onClickBack = () => {

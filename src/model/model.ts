@@ -3,7 +3,7 @@ interface boardState {
     board: string[];
     posKey: number;
     row: number;
-    key: string;
+    correctWord: string;
 
 }
 

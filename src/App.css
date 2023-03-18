@@ -6,3 +6,28 @@
   padding: 0;
   margin: 0;
 }
+
+.correct {
+  border:none;
+  animation: flip 0.7s linear;
+  background-color: rgb(3,164,100);
+}
+.almost {
+  border:none;
+  animation: flip 0.7s linear;
+  background-color: rgb(255,213,0);
+}
+
+.wrong {
+  border: none;
+  animation: flip 0.7s linear;
+  background-color: rgb(72,72,72);
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }100% {
+    transform: rotateX(360deg);
+  }
+}
