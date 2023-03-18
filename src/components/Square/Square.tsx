@@ -18,8 +18,14 @@ const Square: React.FC<Props> = ({ square, squareIdx }) => {
   const [correct, setCorrect] = useState<boolean>(false);
   const [almost, setAlmost] = useState<boolean>(false);
   const [wrong, setWrong] = useState<boolean>(false);
+  square = square.toLowerCase();
+  console.log(correctWord);
+  
+  
   useEffect(() => {
     console.log("Correct word: ", correctWord[(posKey - 1) % 5]);
+    console.log("Square: ", square);
+    
     if (correctWord[(posKey - 1) % 5] === square) {
       setCorrect(true);
     } else if (!correct && square !== "" && correctWord.includes(square)) {
@@ -57,7 +63,7 @@ const Square: React.FC<Props> = ({ square, squareIdx }) => {
 
   return (
     <motion.div
-      className={`text-[32px] h-[48px] w-[48px] text-center bg-none cursor-pointer place-items-center mx-[2px] ${status}`}
+      className={`text-[32px] h-[48px] w-[48px] text-center bg-none cursor-pointer place-items-center mx-[2px] uppercase ${status}` }
       style={{ border: "2px solid #6EB9E3" }}
       animate={square ? "filled" : "unfilled"}
       variants={variants}

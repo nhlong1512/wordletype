@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import wordList from "../word.json";
 
+let randomNum =Math.floor(Math.random() * wordList.words.length);
 const initialState = {
   board: [
     "",
@@ -35,7 +37,7 @@ const initialState = {
   ],
   posKey: 0,
   row: 0,
-  correctWord: "CONES",
+  correctWord: wordList.words[randomNum],
 };
 
 const boardSlice = createSlice({
